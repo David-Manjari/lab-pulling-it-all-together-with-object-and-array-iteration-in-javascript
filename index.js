@@ -114,3 +114,120 @@ function gameObject() {
         },
     };
 }
+
+const teamStatistics =gameObject()
+// create a function that takes palyers name and returns the points scored
+
+function numPointsScored(playerName) {
+    for (let teamStatus in teamStatistics){
+
+            for (let teamStats in teamStatistics[teamStatus].players){
+                       
+                if (teamStats === playerName) {
+                    return `${playerName} has scored ${teamStatistics [teamStatus]['players'][teamStats]['points']} points`
+                }
+            };
+        };
+            
+    };
+console.log(numPointsScored("Brendan Hayword"))
+
+function shoeSize(playerName) {
+    for (let teamStatus in teamStatistics) {
+
+        for (let teamStats in teamStatistics[teamStatus].players) {
+
+            if (teamStats === playerName) {
+                return `${playerName} has a shoe of size ${teamStatistics[teamStatus]['players'][teamStats]['shoe']}`
+            }
+        };
+    };
+
+};
+
+console.log(shoeSize("Brendan Hayword"))
+
+// Function returns the team colors as an array after an input of the teams name
+function teamColors (teamName) {
+    for (let name in teamStatistics){
+        console.log(name)
+        if (teamStatistics[name]['teamName'] === teamName){
+            return teamStatistics[name]['colors']
+
+        }
+    }
+};
+
+console.log(teamColors("Charlotte Hornets"))
+
+// create a function that returns an array of both team names
+
+function teamNames() {
+    let teamNameArr = []
+    for (const key in teamStatistics) {
+        teamNameArr.push(teamStatistics[key]['teamName'])
+        
+    }
+    return  teamNameArr
+}
+
+console.log(teamNames())
+
+//Takes a team name as input and returns an array of all players’ jersey numbers on that team.
+
+function playerNumbers(teamName) {
+
+    let jerseyNumbers = [];
+    for (const key in teamStatistics) {
+        if (teamStatistics[key]['teamName'] === teamName) {
+         for (let numberKey in teamStatistics[key]){
+            if(numberKey === 'players'){
+
+                for (let playerKey in teamStatistics[key][numberKey] )
+    
+                jerseyNumbers.push(teamStatistics[key][numberKey][playerKey]['number']);
+            }
+         }
+       }
+
+    }
+    return jerseyNumbers;
+}
+console.log(playerNumbers('Brooklyn Nets'))
+
+//Takes a player’s name as input and returns an object with all stats for that player.
+
+function playerStats(playerName){
+    for (let key in teamStatistics){
+        
+       for (let playerdetails in teamStatistics[key]['players']){
+        
+           if (playerdetails === playerName) {
+               
+               return teamStatistics[key]['players'][playerdetails]
+           }
+       }
+    }
+}
+
+console.log(playerStats('Brendan Hayword'))
+
+function bigShoeRebounds(){
+    let largestShoeSize = 0;
+    let playerLargestShoe = ""
+    for(let key in teamStatistics){
+         
+        for (let playerrebounds in teamStatistics[key]['players']){
+            if (largestShoeSize < teamStatistics[key]['players'][playerrebounds]['shoe']){
+                largestShoeSize = teamStatistics[key]['players'][playerrebounds]['shoe']
+                playerLargestShoe = playerrebounds
+                
+            }
+        }  
+        return `Player ${playerLargestShoe} with the largest shoe size has ${teamStatistics[key]['players'][playerLargestShoe]['rebounds']} rebounds`
+
+    }
+
+    
+}
+console.log(bigShoeRebounds())
