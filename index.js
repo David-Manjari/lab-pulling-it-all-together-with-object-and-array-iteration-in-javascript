@@ -115,7 +115,7 @@ function gameObject() {
     };
 }
 
-const teamStatistics =gameObject()
+const teamStatistics = gameObject()
 // create a function that takes palyers name and returns the points scored
 
 function numPointsScored(playerName) {
@@ -130,7 +130,7 @@ function numPointsScored(playerName) {
         };
             
     };
-console.log(numPointsScored("Brendan Hayword"))
+
 
 function shoeSize(playerName) {
     for (let teamStatus in teamStatistics) {
@@ -145,7 +145,6 @@ function shoeSize(playerName) {
 
 };
 
-console.log(shoeSize("Brendan Hayword"))
 
 // Function returns the team colors as an array after an input of the teams name
 function teamColors (teamName) {
@@ -158,8 +157,6 @@ function teamColors (teamName) {
     }
 };
 
-console.log(teamColors("Charlotte Hornets"))
-
 // create a function that returns an array of both team names
 
 function teamNames() {
@@ -171,7 +168,7 @@ function teamNames() {
     return  teamNameArr
 }
 
-console.log(teamNames())
+
 
 //Takes a team name as input and returns an array of all players’ jersey numbers on that team.
 
@@ -193,7 +190,7 @@ function playerNumbers(teamName) {
     }
     return jerseyNumbers;
 }
-console.log(playerNumbers('Brooklyn Nets'))
+
 
 //Takes a player’s name as input and returns an object with all stats for that player.
 
@@ -210,7 +207,6 @@ function playerStats(playerName){
     }
 }
 
-console.log(playerStats('Brendan Hayword'))
 
 function bigShoeRebounds(){
     let largestShoeSize = 0;
@@ -230,4 +226,3 @@ function bigShoeRebounds(){
 
     
 }
-console.log(bigShoeRebounds())
