@@ -222,7 +222,21 @@ function bigShoeRebounds(){
         }  
         return `Player ${playerLargestShoe} with the largest shoe size has ${teamStatistics[key]['players'][playerLargestShoe]['rebounds']} rebounds`
 
-    }
+    } 
 
     
+}
+function mostPointsScored() {
+    let mostPoints = 0;
+    let playerMostScores = ""
+    for (let key in teamStatistics){
+        for (let playerScores in teamStatistics[key]['players']) {
+            if (mostPoints < teamStatistics[key]['players'][playerScores]['points']) {
+                mostPoints = teamStatistics[key]['players'][playerScores]['points']
+                playerMostScores = playerScores
+
+            }
+        }  
+      
+    }  return playerMostScores
 }
