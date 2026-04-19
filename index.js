@@ -240,3 +240,30 @@ function mostPointsScored() {
       
     }  return playerMostScores
 }
+
+function winningTeam() {
+    let team1 = 0;
+    let team2 = 0;
+
+    for (let key in teamStatistics){
+
+        if (teamStatistics[key]['teamName'] === "Brooklyn Nets"){
+            for(let playerPoints in teamStatistics[key]['players']){
+                team1 += teamStatistics[key]['players'][playerPoints]['points']
+            }
+            
+        }
+        else {
+            for (let playerPoints in teamStatistics[key]['players']) {
+                team2 += teamStatistics[key]['players'][playerPoints]['points']
+            }
+            
+        }
+    }
+    
+    if (team1 > team2) {
+        return `The Brooklyn Nets has the most points`
+    }
+    else 
+        return `The Charlotte Hornets has the most points`
+}
