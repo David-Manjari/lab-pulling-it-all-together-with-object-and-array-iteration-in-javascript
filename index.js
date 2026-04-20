@@ -124,7 +124,7 @@ function numPointsScored(playerName) {
             for (let teamStats in teamStatistics[teamStatus].players){
                        
                 if (teamStats === playerName) {
-                    return `${playerName} has scored ${teamStatistics [teamStatus]['players'][teamStats]['points']} points`
+                    return teamStatistics [teamStatus]['players'][teamStats]['points']
                 }
             };
         };
@@ -138,7 +138,7 @@ function shoeSize(playerName) {
         for (let teamStats in teamStatistics[teamStatus].players) {
 
             if (teamStats === playerName) {
-                return `${playerName} has a shoe of size ${teamStatistics[teamStatus]['players'][teamStats]['shoe']}`
+                return teamStatistics[teamStatus]['players'][teamStats]['shoe']
             }
         };
     };
@@ -220,7 +220,7 @@ function bigShoeRebounds(){
                 
             }
         }  
-        return `Player ${playerLargestShoe} with the largest shoe size has ${teamStatistics[key]['players'][playerLargestShoe]['rebounds']} rebounds`
+        return teamStatistics[key]['players'][playerLargestShoe]['rebounds']
 
     } 
 
@@ -262,8 +262,8 @@ function winningTeam() {
     }
     
     if (team1 > team2) {
-        return `The Brooklyn Nets has the most points`
+        return `The Brooklyn Nets`
     }
     else 
-        return `The Charlotte Hornets has the most points`
+        return `The Charlotte Hornets`
 }
