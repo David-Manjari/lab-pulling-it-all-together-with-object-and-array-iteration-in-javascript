@@ -216,14 +216,15 @@ function bigShoeRebounds(){
         for (let playerrebounds in teamStatistics[key]['players']){
             if (largestShoeSize < teamStatistics[key]['players'][playerrebounds]['shoe']){
                 largestShoeSize = teamStatistics[key]['players'][playerrebounds]['shoe']
-                playerLargestShoe = playerrebounds
+                playerLargestShoe = teamStatistics[key]['players'][playerrebounds]['rebounds']
                 
             }
         }  
-        return teamStatistics[key]['players'][playerLargestShoe]['rebounds']
-
+            
     } 
 
+
+return playerLargestShoe
     
 }
 function mostPointsScored() {
